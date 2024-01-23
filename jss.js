@@ -4,8 +4,7 @@ var timeDiv = $(".time-div"); // time element
 var description = $(".description"); //text area
 
 // Current Day
-var todayDate = moment().format('dddd, MMM Do YYYY');
-$("#currentDay").html(todayDate);
+$("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
 
 
 
@@ -22,10 +21,10 @@ $(document).ready(function () {
     })
    
     function timeTracker() {
-        //get current number of hours.
+        //current number of hours
         var timeNow = moment().hour();
 
-        //  functions of time blocks
+        //  timeblock functions
         $(".time-block").each(function () {
             var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
@@ -49,7 +48,7 @@ $(document).ready(function () {
         })
     }
 
-   // local storage get item
+   // local storage
     $("#hour9 .description").val(localStorage.getItem("hour9"));
     $("#hour10 .description").val(localStorage.getItem("hour10"));
     $("#hour11 .description").val(localStorage.getItem("hour11"));
